@@ -165,6 +165,18 @@ const postResetPass = async (req, res) => {
   }
 };
 
+const getProfile = async (req, res) => {
+  try {
+    if (!req.user.provider) {
+      req.user.avatar = config.url + req.user.avatar;
+    }
+    const result = req.user.toJSON();
+    res.status(200).send(result);
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized", err });
+  }
+};
+
 module.exports = {
   postSignUp,
   postSignIn,
@@ -173,4 +185,5 @@ module.exports = {
   postForgetPassword,
   checkSecretTokenResetPassword,
   postResetPass,
+  getProfile,
 };

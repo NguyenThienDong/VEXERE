@@ -7,6 +7,7 @@ const {
   postForgetPassword,
   checkSecretTokenResetPassword,
   postResetPass,
+  getProfile,
 } = require("../controllers/user");
 const auth = require("../helpers/authorization");
 const router = express.Router();
@@ -27,5 +28,6 @@ router.post("/logout", auth(), postLogout);
 router.post("/forgetpassword", postForgetPassword);
 router.post("/checksecrettoken", checkSecretTokenResetPassword);
 router.post("/resetpassword", postResetPass);
+router.get("/profile", auth(), getProfile);
 
 module.exports = router;
