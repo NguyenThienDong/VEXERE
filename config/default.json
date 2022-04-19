@@ -1,0 +1,6 @@
+{
+    "dbUrl":"mongodb+srv://dongnguyen:Dong98bn@vexere.rwspo.mongodb.net/VeXeRe?retryWrites=true&w=majority",
+    "port":2222,
+    "jwtSignature":"vexereapi",
+    "url":"http://localhost:2222"
+}

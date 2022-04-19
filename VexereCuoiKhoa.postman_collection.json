@@ -1,0 +1,1659 @@
+{
+	"info": {
+		"_postman_id": "f0f417fc-fe29-43b0-886c-79f82105f034",
+		"name": "VexereCuoiKhoa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "http://localhost:3000/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"van hop\",\r\n    \"username\":\"vanhop993\",\r\n    \"password\":\"12345678\",\r\n    \"email\":\"vanhop993@gmail.com\",\r\n    \"gender\":\"nam\",\r\n    \"phone\":\"0944993439\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:3000/verify?secretToken=adfsdafsadf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/verify?secretToken=2Wg2Dsbvxv2zkDDr468E3sZtJTnxcNcO1612618420172",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"verify"
+							],
+							"query": [
+								{
+									"key": "secretToken",
+									"value": "2Wg2Dsbvxv2zkDDr468E3sZtJTnxcNcO1612618420172"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"vanhop993\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFmYmZiZjYxZDk0MTMwZjg1NGI0MDYiLCJpYXQiOjE2MTI2OTQ3NjN9.7NmXwH3MMZ3ilBqTgZti6UwkDvRW7Z-Viba5xfbPyqg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/facebook/signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"access_token\":\"EAAGAsIGCZAwQBALTK4Rmz6sYXenBZCMQhonxBoCEs2I4UU8fCWSZB8u3tx5IRns9ceEK2PxqMklGQWga2Tjpa2LsLDgZABUg77MtGUOAvLA4ZAfpJzLbKCLIA58QRJMDBJBZBvtF5iKve5hzVTjusWCbxjy0k3nI6ujc8Eo1XETrV3nzTK1ln6nidLFYt1NrHkqJkGHwZCZC24LZC1PjZCnwfOXrMQ5cpYPKmb0tPZCnZCCprwZDZD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/facebook/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"facebook",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/google/signin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"access_token\":\"ya29.a0AfH6SMBc83g_-0_K3VcfQgWNNwSdBhwtwh85Wbr9tHsnVqL008ePW_QMZx0gNmUJMfvoTU7Afcd-EzRfLdfNoJEBNcOe9UK5x2g-5Yqj1dNeQOlPmvR6WyR8Z2eupnchgvEzoTZ-9yyv4MtrumuSfnfn0N1d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/google/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"google",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/forgetpassword?email=vanhop993@gmail.com",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/forgetpassword?email=vanhop993@gmail.com",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"forgetpassword"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "vanhop993@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/resetpassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"vanhop993@gmail.com\",\r\n    \"password\":\"87654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/resetpassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"resetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/put",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/D:/OneDrive - 5TB/Desktop/tun lum/13-reasons-why.png"
+								},
+								{
+									"key": "name",
+									"value": "do van hop",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "vanhop993@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "nam",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0944993439",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/profile/avatar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/D:/OneDrive - 5TB/Desktop/tun lum/dao_kinh_hoang12.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/profile/avatar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profile",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "{{url}}/company?code=tien-oanh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/company?_id=ádfsadfsadfasdf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "ádfsadfsadfasdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/company?code=tien-oanh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/company?id=603bbcf2f1f3e53208cb366a",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "603bbcf2f1f3e53208cb366a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "\"Tiến Oanh\"",
+									"type": "text"
+								},
+								{
+									"key": "addressOffice",
+									"value": "[{\"place\":\"603b9d03303a5406d0e13664\",\"address\":{area\n:\n\"Sài Gòn ( TÂN BÌNH )\"\naddress\n:\n\"266 Đồng Đen Q.Tân Bình\",\"hotline\":[\"\"1900 888684}]",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "\"tien-oanh\"",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1587955819393.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1601995113048.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1601995114955.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1607134756740.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1607134758146.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1607134807153.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1607134808251.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1607135495846.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1607135496950.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/tien oanh/1607137227808.jpeg"
+									]
+								},
+								{
+									"key": "routes",
+									"value": "[\n      {\n        \"to\": { \"id\": \"603b9d2194dcfe478cc9f41b\", \"name\": \"Đắk Lắk\" },\n        \"from\": { \"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\" }\n      },\n      {\n        \"to\": { \"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\" },\n        \"from\": {\"id\": \"603b9d2894dcfe478cc9f41d\", \"name\": \"Đắk Nông\" }\n      },\n      {\n        \"to\": { \"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\" },\n        \"from\": { \"id\": \"603b9d2194dcfe478cc9f41b\", \"name\": \"Đắk Lắk\" }\n      },\n      {\n        \"to\": { \"id\": \"603b9d2894dcfe478cc9f41d\", \"name\": \"Đắk Nông\" },\n        \"from\": { \"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\" }\n      },\n      {\n        \"to\": { \"id\": \"603b9dba02bbd415205508c1\", \"name\": \"Buôn Ma Thuột - Đắk Lắk\" },\n        \"from\": { \"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\" }\n      },\n      {\n        \"to\": {\"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\" },\n        \"from\": { \"id\": \"603b9dba02bbd415205508c1\", \"name\": \"Buôn Ma Thuột - Đắk Lắk\" }\n      }\n    ]",
+									"type": "text"
+								},
+								{
+									"key": "introdution",
+									"value": "{\n    \"company\":\"602f4c559b009b4b38db25b6\",\n    \"title\":\"Thông tin xe Tiến Oanh\",\n    \"intro\":\"### VeXeRe mở bán online vé xe Tiến Oanh từ Sài Gòn đi Buôn Ma Thuột - Đăk Lăk\\n \\n[Xe Tiến Oanh](#) là hãng xe khách chất lượng cao có tuyến xe hoạt động chủ yếu từ Sài Gòn đi Buôn Mê Thuột - Đăk Lăk và ngược lại. Phục vụ một số ít tuyến đường quen thuộc nên chất lượng của xe Tiến Oanh luôn được đảm bảo và tập trung đầu tư tốt nhất. Xe Tiến Oanh đi Đak Lak đặc biệt có dòng xe limousine giường nằm cao cấp. Loại xe hiện đại bậc nhất giúp bạn hoàn toàn yên tâm sử dụng xe Tiến Oanh cùng những trải nghiệm tưởng chừng chỉ có thể là giới thượng lưu mới có. \\n \\n ### [Số điện thoại, địa chỉ](#) và các điểm đón/trả của xe Tiến Oanh \\n \\n #### Văn phòng \\n \\n Văn phòng nhà xe Phúc Xuyên tại Sài Gòn: Số 804 Song Hành Hà Nội, Quận 9 , Sài Gòn. \\n \\n ![văn phong nhà xe Tiến Oanh tại Sài gòn](https://lh5.googleusercontent.com/0uzwmoRzcZ-9bmdteKtBfuP244D7Ur9fOFMv3tqwdhcFUm5jwRKoyV6DBaEVXmY01M6XoWcdq5U8049dt48DkpodScrC18dMu7WYwQvXclhTp4qADTpoxoIB8pHJWtVxL4gqjJ87) \\n \\n Địa chỉ văn phòng nhà xe Tiến Oanh tại Sài Gòn \\n \\n Văn phòng nhà xe Tiến Oanh tại Buôn Ma Thuột: Số 555 Phạm Văn Đồng, TP Buôn Ma Thuột, Đăk Lăk. \\n \\n [Văn phòng nhà xe Tiến Oanh tại Buôn Ma Thuột ĐăkLak](https://lh4.googleusercontent.com/3qvhSjgM22YvDZXRtQdKcm9-IQ5chQBOMQcv2KZppZu6R9RTqiPzEzZDuNdaGrCIYru3OElXuLaUFj4MQc3wXw702DsigZ-HmhvKc0QPVPuaTbqxAanGGHmi9o260MYzgbfxikWm) \\n \\n\"\n}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/company",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "\"Anh Thư (Buôn Hồ)\"",
+									"type": "text"
+								},
+								{
+									"key": "addressOffice",
+									"value": "[{\"provice\":\"Hồ Chí Minh\",\"address\":[\"Hồ Chí Minh 127/15 Ni Sư Huỳnh Liên\"]},{\"provice\":\"ĐăkLăk\",\"address\":[\"Buôn Hồ 1284 Hùng Vương, p. Thống Nhất\"]}]",
+									"type": "text"
+								},
+								{
+									"key": "hotline",
+									"value": "[\"1900 888684\"]",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "\"anh-thu\"",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/anh thu/1562053360814.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/anh thu/1562053360992.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/anh thu/1562053361162.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/anh thu/1562053361172.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/anh thu/1611571366482.jpeg",
+										"/D:/OneDrive - 5TB/Desktop/tun lum/New folder (2)/anh thu/1611571366854.jpeg"
+									]
+								},
+								{
+									"key": "routes",
+									"value": "[ \n    {\n        \"to\": { \"id\": \"603b9d2194dcfe478cc9f41b\", \"name\": \"Đắk Lắk\" },\n        \"from\": { \"id\":\"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\" }\n    },\n    {\n        \"to\": { \"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\" },\n        \"from\": { \"id\": \"603b9d2194dcfe478cc9f41b\", \"name\": \"Đắk Lắk\" }\n    },\n    {\n        \"to\": { \"id\": \"603bbb78eef1f7221430eb9e\", \"name\": \"Buôn Hồ - Đắk Lắk\" },\n        \"from\": { \"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\"}\n     },\n     {\n        \"to\": { \"id\": \"603b9d03303a5406d0e13663\", \"name\": \"Hồ Chí Minh\"},\n        \"from\": { \"id\": \"603bbb78eef1f7221430eb9e\", \"name\": \"Buôn Hồ - Đắk Lắk\"  }\n      }\n]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/company",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{put}}/company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tiến Oanh",
+									"type": "text"
+								},
+								{
+									"key": "addressOffice",
+									"value": "[{\"provice\":\"Hồ Chí Minh\",\"address\":[\"Sài Gòn ( TÂN BÌNH )266 Đồng Đen Q.Tân Bình\",\"Sài Gòn ( THỦ ĐỨC )804 Song Hành, Xa Lộ Hà Nội\",\"Sài Gòn ( Q5 ) 88A Hùng Vương, P9, Q5\"]},{\"provice\":\"ĐăkLăk\",\"address\":[\"Hòa Thắng77 Nguyễn Thái Bình. TPBMT\",\"Hai Bà Trưng134 Hai Bà Trưng. TPBMT\",\"Hòa Đông 555 Phạm Văn Đồng. TPBMT\",\"Đạt LíQL14, Chợ Đạt Lí, TP BMT\"]}]",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "tien-oanh",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "hotline",
+									"value": "[\"1900 888684\",\"1900 6084\"]",
+									"type": "text"
+								},
+								{
+									"key": "hotline",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/company",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/allcompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/allcompany",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"allcompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/company/introduce",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"603bb488c10d363e809dcf03\",\r\n    \"title\":\"Thông tin xe Tiến Oanh\",\r\n    \"intro\":\"### VeXeRe mở bán online vé xe Tiến Oanh từ Sài Gòn đi Buôn Ma Thuột - Đăk Lăk\\n \\n[Xe Tiến Oanh](#) là hãng xe khách chất lượng cao có tuyến xe hoạt động chủ yếu từ Sài Gòn đi Buôn Mê Thuột - Đăk Lăk và ngược lại. Phục vụ một số ít tuyến đường quen thuộc nên chất lượng của xe Tiến Oanh luôn được đảm bảo và tập trung đầu tư tốt nhất. Xe Tiến Oanh đi Đak Lak đặc biệt có dòng xe limousine giường nằm cao cấp. Loại xe hiện đại bậc nhất giúp bạn hoàn toàn yên tâm sử dụng xe Tiến Oanh cùng những trải nghiệm tưởng chừng chỉ có thể là giới thượng lưu mới có. \\n \\n ### [Số điện thoại, địa chỉ](#) và các điểm đón/trả của xe Tiến Oanh \\n \\n #### Văn phòng \\n \\n Văn phòng nhà xe Phúc Xuyên tại Sài Gòn: Số 804 Song Hành Hà Nội, Quận 9 , Sài Gòn. \\n \\n ![văn phong nhà xe Tiến Oanh tại Sài gòn](https://lh5.googleusercontent.com/0uzwmoRzcZ-9bmdteKtBfuP244D7Ur9fOFMv3tqwdhcFUm5jwRKoyV6DBaEVXmY01M6XoWcdq5U8049dt48DkpodScrC18dMu7WYwQvXclhTp4qADTpoxoIB8pHJWtVxL4gqjJ87) \\n \\n Địa chỉ văn phòng nhà xe Tiến Oanh tại Sài Gòn \\n \\n Văn phòng nhà xe Tiến Oanh tại Buôn Ma Thuột: Số 555 Phạm Văn Đồng, TP Buôn Ma Thuột, Đăk Lăk. \\n \\n [Văn phòng nhà xe Tiến Oanh tại Buôn Ma Thuột ĐăkLak](https://lh4.googleusercontent.com/3qvhSjgM22YvDZXRtQdKcm9-IQ5chQBOMQcv2KZppZu6R9RTqiPzEzZDuNdaGrCIYru3OElXuLaUFj4MQc3wXw702DsigZ-HmhvKc0QPVPuaTbqxAanGGHmi9o260MYzgbfxikWm) \\n \\n\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/introduce",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"introduce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/company/introduce",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"603bbcf2f1f3e53208cb366a\",\r\n    \"title\":\"Thông tin xe Anh Thư (Buôn Hồ)\",\r\n    \"intro\":\"VeXeRe.com mở bán vé trực tuyến xe Anh Thư đi Buôn Mê Thuột từ Sài Gòn\\n \\nTuyến đường đi Buôn Mê Thuột được khá nhiều nhà xe khai thác. [Xe Anh Thư](#) là một trong ít những nhà xe được nhiều hành khách tin tưởng lựa chọn trên tuyến đường này. Được trang bị dàn xe giường nằm cao cấp, đời mới. Nhà xe hướng tới sự trải nghiệm an toàn, thoải mái của hành khách nên chú trọng chăm chút cả về chất lượng xe lẫn đội ngũ nhân viên phục vụ chuyên nghiệp. Lựa chọn xe Anh Thư đi Buôn Mê Thuột từ Sài Gòn chắc chắn sẽ không làm bạn thất vọng \\n \\n I.Đặt vé xe Anh Thư từ Sài Gòn đi Buôn Mê Thuột và các vấn đề cần lưu ý: \\n \\n Vị trí còn trống khi đặt vé xe Anh Thư sẽ tùy thuộc vào thời điểm khách hàng liên hệ. Thường vào các ngày cuối tuần, lượng hành khách di chuyển sẽ nhiều hơn. Do đó, để có được vị trí tốt, bạn cần lập kế hoạch sớm và liên hệ đặt giữ chỗ trước. Bạn có thể đặt vé xe Anh Thư dễ dàng, tiện lợi, uy tín qua website VeXeRe.com \\n \\n ![Xe Anh Thư đi Buôn Mê Thuột](https://lh6.googleusercontent.com/MGMFSnQRk3kM0Ofgx2vXxlL9nX7z-cmrKqAunWf8edr10Gd2Nu6X8RMQ5f0_lU0hVK3tVSYLW68ezlplDcQdBoE3lh-aCAR1YAmxjqGWAlMJqqAWV6rQd0BNpwD_jPYICFrirZLY) \\n \\n Đối với trường hợp bắt xe dọc đường, cần lưu ý giữ điện thoại luôn luôn trong tình trạng có thể liên hệ được. Bên cạnh đó, bạn hãy mô tả địa điểm đón càng cụ thể để tài xế dễ nhận biết. \\n \\n Sau khi đặt vé qua [VeXeRe.com](/), bạn có thể sử dụng mã vé điện tử để lên xe. Cần phải có mặt trước giờ xe xuất bến từ 30 – 45 phút để làm thủ tục. Bạn đưa tin nhắn có chứa mã vé cho nhân viên phòng vé. Nhân viên sẽ hỗ trợ xuất vé và hướng dẫn bạn ra xe phù hợp. \\n \\n Xe được sắp xếp tùy thuộc vào thời gian chạy quay đầu. Vì vậy, không biết trước được bạn sẽ đi xe biển số bao nhiêu hay tài xế nào. Nếu cần các thông tin trên, bạn cần liên hệ gần giờ đi để nắm rõ hơn. \\n \\n II. Địa chỉ, số điện thoại xe Anh Thư: thông tin chi tiết \\n \\n Văn phòng chính của xe Anh Thư tại Sài Gòn  có địa chỉ tại 127/15 Ni Sư Huỳnh Liên, Tân Bình, TP. Hồ Chí Minh. Từ đây, xe sẽ di chuyển về Buôn Hồ, Tỉnh Đắk Lắk. \\n \\n Hiện tại xe chưa hỗ trợ trung chuyển tại Buôn Mê Thuột. Khi liên hệ đặt vé, bạn nên tìm hiểu trước, có sẵn địa chỉ cần đến và hỏi kỹ nhân viên tư vấn. \\n \\n Nếu ở Sài Gòn, bạn sẽ tự di chuyển ra văn phòng nhà xe để đi xe. Trong trường hợp bạn ở các tỉnh thành lân cận, xe cũng có hỗ trợ đón khách trên cung đường xe đi nếu có đặt vé trước. Một lưu ý nhỏ là bạn cần phải hỏi kỹ hơn về điểm đón khi đặt vé khi cần đón xe dọc đường. Địa chỉ cung cấp càng cụ thể sẽ càng dễ hơn khi tài xế liên hệ đón. \\n \\n III. Tại sao nên đặt vé xe Anh Thư đi Buôn Mê Thuột? \\n \\n Hành khách đánh giá xe Anh Thư là có chất lượng tốt dựa trên trải nghiệm khách hàng. Nhà xe luôn cam kết khởi hành đúng giờ. Tuy nhiên thời gian đến còn tùy thuộc vào tình hình giao thông. Với các điểm đón dọc đường xe chạy, bạn nên giữ điện thoại bên mình để tài xế liên hệ. Giờ đón chỉ là giờ dự kiến, chắc chắn sẽ có sự chênh lệch. Nên để tránh trễ xe, bạn nên chuẩn bị sớm hơn giờ hẹn. \\n \\n Nhà xe luôn nâng cao chất lượng xe, vệ sinh kỹ càng nên xe luôn mới. Xe giường nằm đời mới cung cấp nội thất tiện nghi, sang trọng. Wifi, máy lạnh hiện đại. Đặc biệt xe được thiết kế giường nằm rộng rãi, có chăn đắp, mang đến cảm giác thoải mái nhất cho hành khách. Xe còn hỗ trợ nước uống, khăn lạnh miễn phí. Xe sẽ cung cấp thoải mái nếu hành khách có yêu cầu. \\n \\n [Nội thất xe Anh Thư đi Buôn Mê Thuột](https://lh6.googleusercontent.com/G3QjWFYBmRY_9cIIEOn2IYXfPL5Ig4DOTSz6IWsprPdS5HOgql-bp9z4RW2rksQICLJBJ-G4ufw4ZEtT4KST7ThLc8DBwEBTkTaKPzcEe0mjVSCBHquxxLQPWscmLgfM51P0yraj) \\n \\n Nội thất xe Anh Thư đi Buôn Mê Thuột \\n \\n Nhân viên phục vụ tận tình, sẵn sàng giúp đỡ hành khách bất cứ lúc nào. Đội ngũ tài xế lái xe an toàn, không bắt khách dọc đường, nhồi nhét khách. Nhà xe chỉ có hỗ trợ đón khách đã liên hệ đặt vé trước. Với các chuyến xe đi đêm, tài xế vẫn chạy tốc độ vừa phải. Khách hàng có thể ngủ hoặc nghỉ ngơi dưỡng sức trên suốt chặng đường đi. Giải đáp nhiệt tình các thắc mắc của hành khách.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/introduce",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"introduce"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bus",
+			"item": [
+				{
+					"name": "{{url}}/bus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc3ZDEwMzNjYjg2ZTNlNThlOTAyY2QiLCJpYXQiOjE2MTkyNTA1MTksImV4cCI6MTYxOTI1MTQxOX0.Cr2JS-Zm-lW8iIceDTYg3s0RaQkvHkMnxFwTz01usr4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\":\"603bb488c10d363e809dcf03\",\r\n    \"licensePlate\":\"47b-97870\",\r\n    \"typeBus\":\"Giường nằm 34 chỗ\",\r\n    \"images\":[\"images/1614525574953-1587955819393.jpeg\",\"images/1614525574957-1607134756740.jpeg\",\"images/1614525574958-1607134758146.jpeg\",\"images/1614525574961-1607134807153.jpeg\",\"images/1614525574962-1607134808251.jpeg\"],\r\n    \"seats\":[\r\n\t{\r\n\t\t\"floor\":\"1\",\r\n\t\t\"listSeats\":[\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A1\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B1\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C1\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A2\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B2\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C2\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A3\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B3\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C3\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A4\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B4\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C4\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A5\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B5\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C5\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A6\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C6\"}\r\n\t\t\t\t]\r\n\t\t]\r\n\t},\r\n\t{\r\n\t\t\"floor\":\"2\",\r\n\t\t\"listSeats\":[\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A1\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B1\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C1\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A2\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B2\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C2\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A3\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B3\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C3\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A4\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B4\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C4\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A5\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"B5\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C5\"}\r\n\t\t\t\t],\r\n\t\t\t\t[\r\n\t\t\t\t\t{\"name\":\"A6\"},\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\tnull,\r\n\t\t\t\t\t{\"name\":\"C6\"}\r\n\t\t\t\t]\r\n\t\t]\t\t\r\n\t}\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/bus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc3ZDEwMzNjYjg2ZTNlNThlOTAyY2QiLCJpYXQiOjE2MTkyNTA1MTksImV4cCI6MTYxOTI1MTQxOX0.Cr2JS-Zm-lW8iIceDTYg3s0RaQkvHkMnxFwTz01usr4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\":\"603bb488c10d363e809dcf03\",\r\n    \"licensePlate\":\"47b-97884\",\r\n    \"typeBus\":\"Giường nằm VIP Limousine\",\r\n    \"images\":[\"images/1614525574955-1601995113048.jpeg\",\"images/1614525574956-1601995114955.jpeg\",\"images/1614525574969-1607137227808.jpeg\"],\r\n    \"seats\":[\r\n        {\r\n            \"floor\":\"D\",\r\n            \"listSeats\":[\r\n                    [\r\n                        {\"name\":\"A1\"},\r\n                        {\"name\":\"B1\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A3\"},\r\n                        {\"name\":\"B3\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A5\"},\r\n                        {\"name\":\"B5\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A7\"},\r\n                        {\"name\":\"B7\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A9\"},\r\n                        {\"name\":\"B9\"}\r\n                    ]\r\n            ]\r\n        },\r\n        {\r\n            \"floor\":\"T\",\r\n            \"listSeats\":[\r\n                    [\r\n                        {\"name\":\"A2\"},\r\n                        {\"name\":\"B2\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A4\"},\r\n                        {\"name\":\"B4\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A6\"},\r\n                        {\"name\":\"B6\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A8\"},\r\n                        {\"name\":\"B8\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A10\"},\r\n                        {\"name\":\"B10\"}\r\n                    ]\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/bus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyId\":\"603bbcf2f1f3e53208cb366a\",\r\n    \"licensePlate\":\"47b-545426\",\r\n    \"typeBus\":\"Giường nằm 44 chỗ\",\r\n    \"images\":[\"images\\\\1614527728888-1562053360814.jpeg\",\"images\\\\1614527728889-1562053360992.jpeg\",\"images\\\\1614527728890-1562053361162.jpeg\",\"images\\\\1614527728893-1562053361172.jpeg\",\"images\\\\1614527728894-1611571366482.jpeg\",\"images\\\\1614527728895-1611571366854.jpeg\"],\r\n    \"seats\":[\r\n        {\r\n            \"floor\":\"1\",\r\n            \"listSeats\":[\r\n                    [\r\n                        {\"name\":\"A1D\"},\r\n                        null,\r\n                        {\"name\":\"B1D\"},\r\n                        null,\r\n                        {\"name\":\"C1D\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A2D\"},\r\n                        null,\r\n                        {\"name\":\"B2D\"},\r\n                        null,\r\n                        {\"name\":\"C2D\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A3D\"},\r\n                        null,\r\n                        {\"name\":\"B3D\"},\r\n                        null,\r\n                        {\"name\":\"C3D\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A4D\"},\r\n                        null,\r\n                        {\"name\":\"B4D\"},\r\n                        null,\r\n                        {\"name\":\"C4D\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A5D\"},\r\n                        null,\r\n                        {\"name\":\"B5D\"},\r\n                        null,\r\n                        {\"name\":\"C5D\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A6D\"},\r\n                        null,\r\n                        null,\r\n                        null,\r\n                        {\"name\":\"C6D\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"7\"},\r\n                        {\"name\":\"8\"},\r\n                        {\"name\":\"9\"},\r\n                        {\"name\":\"10\"},\r\n                        {\"name\":\"11\"}\r\n                    ]\r\n                \r\n            ]\r\n        },\r\n        {\r\n            \"floor\":\"2\",\r\n            \"listSeats\":[\r\n                    [\r\n                        {\"name\":\"A1T\"},\r\n                        null,\r\n                        {\"name\":\"B1T\"},\r\n                        null,\r\n                        {\"name\":\"C1T\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A2T\"},\r\n                        null,\r\n                        {\"name\":\"B2T\"},\r\n                        null,\r\n                        {\"name\":\"C2T\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A3T\"},\r\n                        null,\r\n                        {\"name\":\"B3T\"},\r\n                        null,\r\n                        {\"name\":\"C3T\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A4T\"},\r\n                        null,\r\n                        {\"name\":\"B4T\"},\r\n                        null,\r\n                        {\"name\":\"C4T\"}\r\n                        ],\r\n                        [\r\n                        {\"name\":\"A5T\"},\r\n                        null,\r\n                        {\"name\":\"B5T\"},\r\n                        null,\r\n                        {\"name\":\"C5T\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"A6T\"},\r\n                        null,\r\n                        null,\r\n                        null,\r\n                        {\"name\":\"C6T\"}\r\n                    ],\r\n                    [\r\n                        {\"name\":\"12\"},\r\n                        {\"name\":\"13\"},\r\n                        {\"name\":\"14\"},\r\n                        {\"name\":\"15\"},\r\n                        {\"name\":\"16\"}\r\n                    ]\r\n                \r\n            ]\t\t\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/bus?licensePlate=47b-97865",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/bus?licensePlate=47b-97865",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bus"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "tien-oanh",
+									"disabled": true
+								},
+								{
+									"key": "licensePlate",
+									"value": "47b-97865"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/busofcompany?code=tien-oanh",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/busofcompany?code=tien-oanh",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"busofcompany"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "tien-oanh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/allbus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/allbus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"allbus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Station",
+			"item": [
+				{
+					"name": "{{url}}/station",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"proviceCity\":\"603b9d03303a5406d0e13663\",\r\n    \"name\":\"Bến xe Miền Đông\",\r\n    \"address\":\"292 Đinh Bộ Lĩnh, Phường 26, Bình Thạnh, Thành phố Hồ Chí Minh\",\r\n    \"hotline\":[\"(08) 3899 1607\"],\r\n    \"code\":\"bx-mien-dong\",\r\n    \"introdution\":\"Bến Xe Miền Đông có từ trước năm 1975 với tên gọi là Xa Cảng Miền Đông, trụ sở đặt tại số 286 đường Lê Hồng Phong, phường 1, Quận 10. Sau ngày đất nước thống nhất 30/04/1975, Ủy ban quân quản thành phố Sài Gòn Gia Định đã giao cho ngành Giao thông Vận tải tiếp quản, tổ chức điều hành Xa Cảng Miền Đông thực hiện nhiệm vụ chính trị, vận tải giao lưu thông thương giữa hai miền Nam – Bắc. Ngày 11/12/1976 Xa Cảng Miền Đông Trung Bộ ra đời là tiền thân của Công ty TNHH một thành viên Bến xe Miền Đông ngày hôm nay. Đến năm 1978 theo chủ trương của thành phố, Công ty Xe khách liên tỉnh Miền Đông ra đời và Bến xe khách Miền Đông là đơn vị trực thuộc Công ty Xe khách liên tỉnh Miền Đông, hạch toán nội bộ, năm 1981 thành phố quyết định chuyển Bến xe Miền Đông đến vị trí phường 26, quận Bình Thạnh và đầu tư cơ sở vật chất ,trang thiết bị ban đầu. Bến xe Miền Đông xây dựng từ 1985 trên diện tích khu đất 67.857 m2 (có vị trí địa lý tại cửa ngõ phía Đông thành phố Hồ Chí Minh, được bao quanh bởi các đường Quốc lộ 13, Nguyễn Xí và Đinh Bộ Lĩnh, phường 26 – Quận Bình Thạnh). Theo luận chứng kinh tế kỹ thuật xây dựng công trình Bến xe Miền Đông được Ủy ban Nhân dân thành phố Hồ Chí Minh phê duyệt theo quyết định số 182/CT-UB ngày 25/12/1984 với tất cả 19 hạng mục công trình nhưng việc thi công mới được 10 hạng mục công trình và phải tạm dừng năm 1990. Thực hiện cơ chế thành lập và giải thể doanh nghiệp nhà nước ban hành theo Nghị định 388/NĐ-HĐBT ngày 20/11/1991 của Hội đồng bộ trưởng (nay là Chính phủ) Bến Xe miền Đông được thành lập lại theo thông báo thỏa thuận số 27/TB ngày 11/01/1993 của Bộ Giao thông Vận tải và quyết định số 40/QĐ-UB ngày 26/01/1993 của Ủy Ban nhân dân thành phố Hồ Chí Minh và chính thức trở thành đơn vị độc lập trực thuộc Sở Giao thông vận tải TP.HCM. Tháng 11/1996 thực hiện quyết định của Thành phố Bến xe Miền Đông đã tổ chức tiếp nhận chuyển giao một số luồng tuyến từ Bến xe Văn Thánh về Bến xe Miền Đông đồng thời được chuyển thành doanh nghiệp nhà nước hoạt động công ích theo nghị định số 56/CP ngày 02/10/1996 của Chính phủ và quyết định số 5347/QĐ-UB ngày 02/10/1997 của Ủy ban nhân dân thành phố Hồ Chí Minh và cũng trực thuộc Sở Giao thông Vận tải thành phố. Ngày 15/7/2004 Ủy ban Nhân dân thành phố Hồ Chí Minh có quyết định số 172/2004/QĐ-UB về việc thành lập Tổng Công ty Cơ khí Giao thông Vận tải Sài Gòn thí điểm hoạt động theo mô hình Công ty mẹ - Công ty con (Bến xe Miền Đông là thành viên của Tổng Công ty); đồng thời ngày 30/12/2005 Ủy ban Nhân dân thành phố Hồ Chí Minh có quyết định số 6683/QĐ-UBND về việc chuyển Công ty Nhà nước Bến xe Miền Đông thành Công ty TNHH một thành viên Bến xe Miền Đông (sau đây goi tắt là Bến xe Miền Đông)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/station",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"station"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/station",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Bến xe phía nam Buôn Mê Thuột\",\r\n    \"address\":\"Võ Văn Kiệt, Khánh Xuân, Thành phố Buôn Ma Thuột, Đắk Lắk, Vietnam, Buôn Ma Thuột, Đắk Lắk Tỉnh\",\r\n    \"provice\":\"Buôn Ma Thuột\",\r\n    \"hotline\":[],\r\n    \"code\":\"bx-phia-nam-bmt\",\r\n    \"introdution\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/station",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"station"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/station?code=bx-mien-dong",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/station?code=bx-mien-dong-hcm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"station"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "bx-mien-dong-hcm"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/allstation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/allstation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"allstation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Utility",
+			"item": [
+				{
+					"name": "{{url}}/utility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nhân viên sử dụng tiếng anh\",\r\n    \"description\": \"Nhân viên phòng vé, tài xế , phụ xe có thể giao tiếp bằng tiếng anh với hành khách.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/utility",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"utility"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/utility?code=nhan-vien-su-dung-tieng-anh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/utility?code=nhan-vien-su-dung-tieng-anh",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"utility"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "nhan-vien-su-dung-tieng-anh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/allutility",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/allutility",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"allutility"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Trip",
+			"item": [
+				{
+					"name": "{{url}}/trip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"603bb488c10d363e809dcf03\",\r\n    \"fromState\":\"603b9d03303a5406d0e13664\",\r\n    \"toState\":\"603b9d2194dcfe478cc9f41c\",\r\n    \"pickUpPoint\":[{\"time\":\"23:00\",\"place\":\"Tp. Hồ Chí Minh\"},{\"time\":\"23:05\",\"place\":\"Trường Chinh - Trương Công Định\"},{\"time\":\"23:15\",\"place\":\"Trạm xe buýt Cổng KCN Tân Bình\"},{\"time\":\"23:17\",\"place\":\"Cầu Tham Lương\"}],\r\n    \"dropOffPoint\":[{\"time\":\"07:00\",\"place\":\"Ngã ba Duy Hoà\"},{\"time\":\"07:30\",\"place\":\"Nội Thành TP. Buôn Ma Thuột\"},{\"time\":\"08:00\",\"place\":\"Cư Kuin\"}],\r\n    \"startedDate\":\"2021-03-20\",\r\n    \"departurePlace\":\"603b9d03303a5406d0e13664\",\r\n    \"arrivalPlace\":\"603b9e7e0218851ff87c8ba9\",\r\n    \"departureTime\":\"2021-03-20 21:00:00\",\r\n    \"arrivalTime\":\"2021-03-21 07:30:00\",\r\n    \"image\":\"images\\\\1614525574969-1607137227808.jpeg\",\r\n     \"utilites\":[\"60254e2bb712441968d798ba\",\"60254ffbb712441968d798bf\",\"6025501cb712441968d798c0\",\"6025503cb712441968d798c1\",\"60255064b712441968d798c2\",\"6025507cb712441968d798c3\",\"602550afb712441968d798c4\",\"602550c4b712441968d798c5\",\"602550d3b712441968d798c6\",\"60262cf2cf67ee1118c3f8b3\",\"60255180b712441968d798c8\",\"602551a2b712441968d798c9\",\"602551d8b712441968d798ce\",\"602551b3b712441968d798ca\",\"602551c8b712441968d798cc\",\"602551dfb712441968d798cf\",\"602551beb712441968d798cb\",\"602551d1b712441968d798cd\"],\r\n    \"bus\":\"603bc5d86ec89f23d8d506ed\",\r\n    \"prize\":\"350000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/trip",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"trip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/trip?departurePlace=60250c838e1b092c78ae7deb&arrivalPlace=60250dbd35d28528ccf33ea8&departureTime=2021-02-14 21:00:00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/trip?departurePlace=603b9d03303a5406d0e13664&arrivalPlace=603b9d2194dcfe478cc9f41c&startedDate=2021-03-20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"trip"
+							],
+							"query": [
+								{
+									"key": "departurePlace",
+									"value": "603b9d03303a5406d0e13664"
+								},
+								{
+									"key": "arrivalPlace",
+									"value": "603b9d2194dcfe478cc9f41c"
+								},
+								{
+									"key": "startedDate",
+									"value": "2021-03-20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/tripcompany?code=tien-oanh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tripcompany?code=tien-oanh",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tripcompany"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "tien-oanh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trip_Id\":\"603cce53057dd62e10e9a9c2\",\r\n    \"arrSeats_Id\":[\"603cce53057dd62e10e9a9a0\",\"603cce53057dd62e10e9a9a1\",\"603cce53057dd62e10e9a9b7\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/booking",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/trip",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"602f4fc2c49e182354eaf25a\",\r\n    \"departurePlace\":\"60311bfd4ad842399835dac9\",\r\n    \"arrivalPlace\":\"60311c104ad842399835daca\",\r\n    \"departureTime\":\"2021-02-20 21:00:00\",\r\n    \"arrivalTime\":\"2021-02-21 06:00:00\",\r\n    \"image\":\"images\\\\1613713345827-1607137227808.jpeg\",\r\n     \"utilites\":[\"60254e2bb712441968d798ba\",\"60254ffbb712441968d798bf\",\"6025501cb712441968d798c0\",\"6025503cb712441968d798c1\",\"60255064b712441968d798c2\",\"6025507cb712441968d798c3\",\"602550afb712441968d798c4\",\"602550c4b712441968d798c5\",\"602550d3b712441968d798c6\",\"60262cf2cf67ee1118c3f8b3\",\"60255180b712441968d798c8\",\"602551a2b712441968d798c9\",\"602551d8b712441968d798ce\",\"602551b3b712441968d798ca\",\"602551c8b712441968d798cc\",\"602551dfb712441968d798cf\",\"602551beb712441968d798cb\",\"602551d1b712441968d798cd\"],\r\n    \"bus\":\"602f682b17644b0c881f0492\",\r\n    \"prize\":\"350000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/trip",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"trip"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Route",
+			"item": [
+				{
+					"name": "{{url}}/route",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"departureProvice\":\"Buôn Hồ - Đắk Lắk\",\r\n    \"arrivalProvice\":\"Sài Gòn\",\r\n    \"code\":\"buon-ho-daklak-di-sai-gon\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/route",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"route"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/route",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/route",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"route"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "commentCompany",
+			"item": [
+				{
+					"name": "{{url}}/commentCompany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"602f4fc2c49e182354eaf25a\",\r\n    \"rating\":{\r\n        \"utilitiesPoint\":8,\r\n        \"serviceQuality\":6,\r\n        \"employeePoint\":8,\r\n        \"safetyPoint\":6,\r\n        \"totalPoint\":7\r\n    },\r\n    \"content\":\"test4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/commentCompany",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"commentCompany"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ticket",
+			"item": [
+				{
+					"name": "{{url}}/tickets",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTY4NDEzNzcsImV4cCI6MTYxNjg0MjI3N30.HwQYX4CXYpg2v42R3CC86jCWdfZacZtubAo-5ybSXQw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/tickets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "commentStation",
+			"item": [
+				{
+					"name": "{{url}}/commentStation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTY3NDczMDYsImV4cCI6MTYxNjc0NzQyNn0.UZ6f4s3cj_GyiDA9vWXRD7dE6KX43xjVtrIhe6kPhd8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"station\":\"603b9ff6bce3344cf088793c\",\r\n    \"rating\":{\r\n        \"serviceQuality\":6,\r\n        \"safetyPoint\":7,\r\n        \"totalPoint\":5\r\n    },\r\n    \"content\":\"test2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/company/introduce",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"company",
+								"introduce"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "proviceCity",
+			"item": [
+				{
+					"name": "{{url}}/provice-city",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Bình Phước\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/provice-city",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"provice-city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{url}}/provice-city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/provice-city",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"provice-city"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "district",
+			"item": [
+				{
+					"name": "{{url}}/district",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"proviceCity\":\"603b9d2194dcfe478cc9f41b\",\r\n    \"name\":\"Buôn Hồ - Đăk Lăk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/district",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"district"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDFlYzMxZDBiMmIwNjMwMTQ4NjBhYmUiLCJpYXQiOjE2MTI3MDcyNTR9.XRZYTxx4L6MQE_voI6Jhffk4IfbG9G4mIF9RyUyB8mM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
