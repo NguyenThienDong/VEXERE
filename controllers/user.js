@@ -100,8 +100,133 @@ const postVerifyAccount = async (req, res) => {
   }
 };
 
+const postLogout = async (req, res) => {
+  try {
+    const index = req.user.tokens.findIndex((token) => token === req.token);
+    req.user.tokens.splice(index, 1);
+    await req.user.save();
+    res.status(200).send({ message: "Đăng xuất thành công!!" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const postForgetPassword = async (req, res) => {
+  const { email } = req.query;
+  try {
+    const foundedUser = await User.findOne({ provider: "", email });
+    if (!foundedUser)
+      return res.status(401).send({ message: "Email ko tồn tại" });
+    const secretToken = randomstring.generate() + Date.now();
+    foundedUser.secretToken = secretToken;
+    const contentEmai = {
+      html: `<h3>Đây là mã reset mật khẩu của ban:</h3>
+          <p>mã reset passworrd:${secretToken}</p>`,
+      subject: "Reset mật khẩu VexereCuoiKhoa",
+    };
+    await foundedUser.save();
+    await sendEmail(email, contentEmai);
+    res.status(200).send({ message: "Vui lòng check email!!" });
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const checkSecretTokenResetPassword = async (req, res) => {
+  const { secretToken, email } = req.body;
+  try {
+    const foundedUser = await User.findOne({ provider: "", email });
+    if (!foundedUser)
+      return res.status(401).send({ message: "Email không tồn tại!!" });
+    if (foundedUser.secretToken !== secretToken)
+      return res.status(401).send({ message: "Mã xác nhận ko đúng!!" });
+    res.status(200).send({ message: "Successs" });
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const postResetPass = async (req, res) => {
+  const { email, password, secretToken } = req.body;
+  console.log(email, password, secretToken);
+  try {
+    const foundedUser = await User.findOne({ provider: "", email });
+    if (!foundedUser)
+      return res.status(401).send({ message: "Email không tồn tại!!" });
+    if (foundedUser.secretToken !== secretToken)
+      return res.status(401).send({ message: "Mã xác nhận ko đúng!!" });
+    foundedUser.password = password;
+    foundedUser.secretToken = "";
+    await foundedUser.save();
+    res.status(200).send({ message: "Thay đổi password thành công!!!" });
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const getProfile = async (req, res) => {
+  try {
+    if (!req.user.provider) {
+      req.user.avatar = config.url + req.user.avatar;
+    }
+    const result = req.user.toJSON();
+    res.status(200).send(result);
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized", err });
+  }
+};
+
+const putProfile = async (req, res) => {
+  const { path } = req.file;
+  const { name, email, phone, gender } = req.body;
+  const { user } = req;
+  try {
+    if (req.file) {
+      user.avatar = path;
+    }
+    user.name = name;
+    user.email = email;
+    user.phone = phone;
+    user.gender = gender;
+    const result = await user.save();
+    res.status(200).send(result);
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const putProfileAvatar = async (req, res) => {
+  const { path } = req.file;
+  const { user } = req;
+  try {
+    user.avatar = path;
+    await user.save();
+    res.status(200).send({ message: "upload avatar thành công!!" });
+  } catch (err) {
+    fs.unlinkSync(path);
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const checkAdmin = async (req, res) => {
+  try {
+    res.status(200).send({ message: "You are admin" });
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
 module.exports = {
   postSignUp,
   postSignIn,
   postVerifyAccount,
+  postLogout,
+  postForgetPassword,
+  checkSecretTokenResetPassword,
+  postResetPass,
+  getProfile,
+  putProfile,
+  putProfileAvatar,
+  checkAdmin,
 };
