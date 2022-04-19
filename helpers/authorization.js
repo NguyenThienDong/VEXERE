@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const User = require("../models/user");
+const User = require("../models/User");
 const jwtSignature = config.get("jwtSignature");
 
 const auth = (roles) => async (req, res, next) => {

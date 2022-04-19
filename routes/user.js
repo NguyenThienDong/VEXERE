@@ -4,6 +4,9 @@ const {
   postSignUp,
   postVerifyAccount,
   postLogout,
+  postForgetPassword,
+  checkSecretTokenResetPassword,
+  postResetPass,
 } = require("../controllers/user");
 const auth = require("../helpers/authorization");
 const router = express.Router();
@@ -21,5 +24,8 @@ router.post("/signup", postSignUp);
 router.post("/signin", postSignIn);
 router.get("/verify", postVerifyAccount);
 router.post("/logout", auth(), postLogout);
+router.post("/forgetpassword", postForgetPassword);
+router.post("/checksecrettoken", checkSecretTokenResetPassword);
+router.post("/resetpassword", postResetPass);
 
 module.exports = router;

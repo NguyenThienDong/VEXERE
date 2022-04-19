@@ -112,9 +112,65 @@ const postLogout = async (req, res) => {
   }
 };
 
+const postForgetPassword = async (req, res) => {
+  const { email } = req.query;
+  try {
+    const foundedUser = await User.findOne({ provider: "", email });
+    if (!foundedUser)
+      return res.status(401).send({ message: "Email ko tồn tại" });
+    const secretToken = randomstring.generate() + Date.now();
+    foundedUser.secretToken = secretToken;
+    const contentEmai = {
+      html: `<h3>Đây là mã reset mật khẩu của ban:</h3>
+          <p>mã reset passworrd:${secretToken}</p>`,
+      subject: "Reset mật khẩu VexereCuoiKhoa",
+    };
+    await foundedUser.save();
+    await sendEmail(email, contentEmai);
+    res.status(200).send({ message: "Vui lòng check email!!" });
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const checkSecretTokenResetPassword = async (req, res) => {
+  const { secretToken, email } = req.body;
+  try {
+    const foundedUser = await User.findOne({ provider: "", email });
+    if (!foundedUser)
+      return res.status(401).send({ message: "Email không tồn tại!!" });
+    if (foundedUser.secretToken !== secretToken)
+      return res.status(401).send({ message: "Mã xác nhận ko đúng!!" });
+    res.status(200).send({ message: "Successs" });
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const postResetPass = async (req, res) => {
+  const { email, password, secretToken } = req.body;
+  console.log(email, password, secretToken);
+  try {
+    const foundedUser = await User.findOne({ provider: "", email });
+    if (!foundedUser)
+      return res.status(401).send({ message: "Email không tồn tại!!" });
+    if (foundedUser.secretToken !== secretToken)
+      return res.status(401).send({ message: "Mã xác nhận ko đúng!!" });
+    foundedUser.password = password;
+    foundedUser.secretToken = "";
+    await foundedUser.save();
+    res.status(200).send({ message: "Thay đổi password thành công!!!" });
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
 module.exports = {
   postSignUp,
   postSignIn,
   postVerifyAccount,
   postLogout,
+  postForgetPassword,
+  checkSecretTokenResetPassword,
+  postResetPass,
 };
