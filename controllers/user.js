@@ -100,8 +100,21 @@ const postVerifyAccount = async (req, res) => {
   }
 };
 
+const postLogout = async (req, res) => {
+  try {
+    const index = req.user.tokens.findIndex((token) => token === req.token);
+    req.user.tokens.splice(index, 1);
+    await req.user.save();
+    res.status(200).send({ message: "Đăng xuất thành công!!" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
 module.exports = {
   postSignUp,
   postSignIn,
   postVerifyAccount,
+  postLogout,
 };
