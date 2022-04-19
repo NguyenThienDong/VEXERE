@@ -177,6 +177,46 @@ const getProfile = async (req, res) => {
   }
 };
 
+const putProfile = async (req, res) => {
+  const { path } = req.file;
+  const { name, email, phone, gender } = req.body;
+  const { user } = req;
+  try {
+    if (req.file) {
+      user.avatar = path;
+    }
+    user.name = name;
+    user.email = email;
+    user.phone = phone;
+    user.gender = gender;
+    const result = await user.save();
+    res.status(200).send(result);
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const putProfileAvatar = async (req, res) => {
+  const { path } = req.file;
+  const { user } = req;
+  try {
+    user.avatar = path;
+    await user.save();
+    res.status(200).send({ message: "upload avatar thành công!!" });
+  } catch (err) {
+    fs.unlinkSync(path);
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
+const checkAdmin = async (req, res) => {
+  try {
+    res.status(200).send({ message: "You are admin" });
+  } catch (err) {
+    res.status(500).send({ message: "You are not authorized" });
+  }
+};
+
 module.exports = {
   postSignUp,
   postSignIn,
@@ -186,4 +226,7 @@ module.exports = {
   checkSecretTokenResetPassword,
   postResetPass,
   getProfile,
+  putProfile,
+  putProfileAvatar,
+  checkAdmin,
 };
